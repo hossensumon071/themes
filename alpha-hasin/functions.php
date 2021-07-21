@@ -1,5 +1,5 @@
 <?php
 
-function change_case($text){
-    return strtoupper($text);
-}
+// function change_case($text){
+//     return strtoupper($text);
+// }

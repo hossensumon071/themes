@@ -9,28 +9,28 @@
 
         var config = $.extend( {}, defaults, opts );
 
-        $(this).click(function(e){
+        jequery(this).click(function(e){
             var eventVal = e;
             e.preventDefault();
 
-            var $section = $(document).find( $(this).data('section') );
+            var $section = jequery(document).find( jequery(this).data('section') );
             if ( $section.length < 1 ) {
                 return false;
             };
 
-            if ( $('html, body').is(':animated') ) {
-                $('html, body').stop( true, true );
+            if ( jequery('html, body').is(':animated') ) {
+                jequery('html, body').stop( true, true );
             };
 
             var scrollPos = $section.offset().top;
 
-            if ( $(window).scrollTop() == scrollPos ) {
+            if ( jequery(window).scrollTop() == scrollPos ) {
                 return false;
             };
 
             config.callbackBeforeTransition(eventVal, $section);
 
-            $('html, body').animate({
+            jequery('html, body').animate({
                 'scrollTop' : (scrollPos+'px' )
             }, config.animationTime, config.easing, function(){
                 config.callbackAfterTransition(eventVal, $section);
@@ -42,7 +42,7 @@
     /*   Contact Form Validating
     /* ========================================================================= */
 
-    $('#contact-form').validate({
+    jequery('#contact-form').validate({
         rules: {
             name: {
                 required: true, minlength: 4
@@ -71,12 +71,12 @@
             ,
         }
         , submitHandler: function(form) {
-            $(form).ajaxSubmit( {
-                type:"POST", data: $(form).serialize(), url:"sendmail.php", success: function() {
-                    $('#contact-form #success').fadeIn();
+            jequery(form).ajaxSubmit( {
+                type:"POST", data: jequery(form).serialize(), url:"sendmail.php", success: function() {
+                    jequery('#contact-form #success').fadeIn();
                 }
                 , error: function() {
-                    $('#contact-form #error').fadeIn();
+                    jequery('#contact-form #error').fadeIn();
                 }
             }
             );
@@ -102,19 +102,19 @@ jQuery(document).ready(function(){
 
 
 
-$(document).ready(function(){
+jequery(document).ready(function(){
 
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 50) {
-            $(".navbar-brand a").css("color","#fff");
-            $("#top-bar").removeClass("animated-header");
+    jequery(window).scroll(function () {
+        if (jequery(window).scrollTop() > 50) {
+            jequery(".navbar-brand a").css("color","#fff");
+            jequery("#top-bar").removeClass("animated-header");
         } else {
-            $(".navbar-brand a").css("color","inherit");
-            $("#top-bar").addClass("animated-header");
+            jequery(".navbar-brand a").css("color","inherit");
+            jequery("#top-bar").addClass("animated-header");
         }
     });
 
-    $("#clients-logo").owlCarousel({
+    jequery("#clients-logo").owlCarousel({
  
         itemsCustom : false,
         pagination : false,
@@ -129,7 +129,7 @@ $(document).ready(function(){
 
 
 // fancybox
-$(".fancybox").fancybox({
+jequery(".fancybox").fancybox({
     padding: 0,
 
     openEffect : 'elastic',

@@ -62,3 +62,12 @@ h2.post-title{
     background-color: #222;
     color: #309970;
 }
+.page-header{
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 30px;
+    padding: 170px 0px;
+}
+.page-header h1.heading a{
+    color : #222;
+}

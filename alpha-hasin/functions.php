@@ -69,3 +69,17 @@ function alpha_sidebar(){
 
 }
 add_action("widgets_init","alpha_sidebar");
+
+function alpha_about_page_template_banner(){
+    if(is_page()) {
+        $alpha_feat_image = get_the_post_thumbnail_url(null,"large");
+        ?>
+        <style>
+            .page_header{
+                background-image: url(<?php echo $alpha_feat_image; ?>);
+            }
+        </style>
+        <?
+    }
+}
+add_action("wp_head","alpha_about_page_template_banner",11);

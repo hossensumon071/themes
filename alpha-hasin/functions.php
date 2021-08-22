@@ -11,14 +11,19 @@ function alpha_bootstraping(){
     load_theme_textdomain("alpha");
     add_theme_support("post-thumbnails");
     add_theme_support("title-tag");
+    add_theme_support("custom-background");
     $alpha_custom_logo_defaults = array(
         "width"=>'100',
-        "height"=> '100'
+        "height"=> '100',
     );
     add_theme_support("custom-logo",$alpha_custom_logo_defaults);
     $alpha_custom_header_details = array(
         'header-text'    => true,
         'default-text-color' => '#222',
+        'width' => 1200,
+        'height' => 600,
+        'flex-height' => true,
+        'flex-width'  => true,
     );
     add_theme_support("custom-header",$alpha_custom_header_details);
     register_nav_menu("topmenu",__("Top Menu","alpha"));
